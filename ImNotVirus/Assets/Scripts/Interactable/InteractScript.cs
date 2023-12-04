@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class InteractScript : MonoBehaviour
 {
     private bool isInRange;
+    public bool locked;
     [SerializeField] private KeyCode interactKey;
     [SerializeField] private UnityEvent interactAction;
     void Start()
@@ -15,7 +16,7 @@ public class InteractScript : MonoBehaviour
 
     void Update()
     {
-        if (isInRange)
+        if (isInRange && !locked)
         {
             /*if (gameObject.CompareTag("Hide"))
             {
@@ -49,6 +50,11 @@ public class InteractScript : MonoBehaviour
         {
             isInRange = false;
         }
+    }
+
+    public void Unlock(GameObject objectToUnlock)
+    {
+        objectToUnlock.GetComponentInChildren<InteractScript>().locked=false;
     }
 
     
