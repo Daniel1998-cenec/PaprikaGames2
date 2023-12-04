@@ -15,7 +15,7 @@ public class ControlScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textoGanar;
     [SerializeField] private TextMeshProUGUI textoPerder;
     [SerializeField] private TextMeshProUGUI textoEmpate;
-
+    [SerializeField] private Button botonSalir;
     [SerializeField] private Button botonOtraVez;
     public bool turnoJugador;
     public bool fin;
@@ -56,6 +56,7 @@ public class ControlScript : MonoBehaviour
             if(j == imagenes[1]){
                 Debug.Log("Has Ganado.");
                 textoGanar.gameObject.SetActive(true);
+                botonSalir.gameObject.SetActive(true);
             }else{
                 Debug.Log("Has Perdido.");
                 textoPerder.gameObject.SetActive(true);
@@ -110,6 +111,6 @@ public class ControlScript : MonoBehaviour
 
     public void SalirJuego()
     {
-        //Cambiar a escena nivel 1
+        SceneManager.LoadScene("Nivel1");
     }
 }

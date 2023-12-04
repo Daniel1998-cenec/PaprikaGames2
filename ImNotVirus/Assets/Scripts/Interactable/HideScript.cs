@@ -6,7 +6,10 @@ public class HideScript : MonoBehaviour
 {
     void Start()
     {
-        
+        if(gameObject.name.Equals("PuertaInicio") && PlayerPrefs.GetInt("Electricidad1")!=0)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     void Update()

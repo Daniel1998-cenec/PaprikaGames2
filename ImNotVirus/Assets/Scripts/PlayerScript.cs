@@ -12,8 +12,21 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("PlayerPrefs:\nPosicion X: " + PlayerPrefs.GetInt("xPos")
+        + "\nPosicion Y: " + PlayerPrefs.GetInt("yPos")
+        + "\nPalanca: " + PlayerPrefs.GetInt("Palanca")
+        + "\nElectricidad1 " + PlayerPrefs.GetInt("Electricidad1")
+        + "\nRefranes " + PlayerPrefs.GetInt("Refranes")
+        + "\nElectricidad2 " + PlayerPrefs.GetInt("Electricidad2")
+        + "\nTresEnRaya " + PlayerPrefs.GetInt("TresEnRaya")
+        + "\nPiedraPapelTijeras " + PlayerPrefs.GetInt("PiedraPapelTijeras")
+        + "\nAcertijos " + PlayerPrefs.GetInt("Acertijos")
+        + "\nNumeros " + PlayerPrefs.GetInt("Numeros"));
+
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        
+        transform.position = new Vector2(PlayerPrefs.GetFloat("xPos"), PlayerPrefs.GetFloat("yPos"));
     }
 
     void FixedUpdate()
@@ -33,6 +46,13 @@ public class PlayerScript : MonoBehaviour
         Vector2 moveDirection = new Vector2(moveX, moveY).normalized;
         rb.velocity = moveDirection*speed;
 
+    }
+    
+    public void checkPoint()
+    {
+        PlayerPrefs.SetFloat("xPos", transform.position.x);
+        PlayerPrefs.SetFloat("yPos", transform.position.y);
+        Debug.Log("Se ha guardado checkpoint en coords: " + transform.position.x + transform.position.y);
     }
     
 
