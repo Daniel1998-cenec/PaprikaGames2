@@ -16,6 +16,12 @@ public class Control : MonoBehaviour
 
     public void ReiniciarCheckpoints()
     {
+        /*
+        0 - Sin hacer, bloqueado
+        1- Sin hacer, desbloqueado
+        2 - Hecho
+        */
+
         PlayerPrefs.SetFloat("xPos", 0.0f);
         PlayerPrefs.SetFloat("yPos", 0.0f);
         PlayerPrefs.SetInt("Palanca", 1);

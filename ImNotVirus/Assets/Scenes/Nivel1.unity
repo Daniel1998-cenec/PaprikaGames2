@@ -8923,6 +8923,30 @@ MonoBehaviour:
           m_StringArgument: Acertijos
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 553826429}
+        m_TargetAssemblyTypeName: InteractScript, Assembly-CSharp
+        m_MethodName: PuzzleHecho
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 553826426}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Acertijos
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1586860550}
+        m_TargetAssemblyTypeName: PlayerScript, Assembly-CSharp
+        m_MethodName: checkPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Acertijos
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &636338904
 GameObject:
   m_ObjectHideFlags: 0
@@ -17445,7 +17469,7 @@ Tilemap:
       - {fileID: 1702249219, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
       - {fileID: 179009837, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
       - {fileID: 1854474374, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 3, y: -9, z: 0}
@@ -17475,7 +17499,7 @@ Tilemap:
       - {fileID: 1702249219, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
       - {fileID: 179009837, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
       - {fileID: 1854474374, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 6, y: -9, z: 0}
@@ -17505,7 +17529,7 @@ Tilemap:
       - {fileID: 1702249219, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
       - {fileID: 179009837, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
       - {fileID: 1854474374, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 9, y: -9, z: 0}
@@ -17515,7 +17539,7 @@ Tilemap:
       - {fileID: 1702249219, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
       - {fileID: 179009837, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
       - {fileID: 1854474374, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 12, y: -9, z: 0}
@@ -17535,7 +17559,7 @@ Tilemap:
       - {fileID: -238123931, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
       - {fileID: 2009873077, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
       - {fileID: -1100468717, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -4, y: -8, z: 0}
@@ -17655,7 +17679,7 @@ Tilemap:
       - {fileID: -238123931, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
       - {fileID: 2009873077, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
       - {fileID: -1100468717, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
-      m_AnimationSpeed: 3
+      m_AnimationSpeed: 3.0000002
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 8, y: -8, z: 0}
@@ -17675,7 +17699,7 @@ Tilemap:
       - {fileID: -238123931, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
       - {fileID: 2009873077, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
       - {fileID: -1100468717, guid: c5ee73c23fbf6234dbc3caafdd40c8b7, type: 3}
-      m_AnimationSpeed: 3.0000002
+      m_AnimationSpeed: 3
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 12, y: -8, z: 0}
@@ -22041,6 +22065,30 @@ MonoBehaviour:
           m_StringArgument: TresEnRaya
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1264855617}
+        m_TargetAssemblyTypeName: InteractScript, Assembly-CSharp
+        m_MethodName: PuzzleHecho
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1264855614}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TresEnRaya
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1586860550}
+        m_TargetAssemblyTypeName: PlayerScript, Assembly-CSharp
+        m_MethodName: checkPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TresEnRaya
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1330787711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22361,6 +22409,30 @@ MonoBehaviour:
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1954228189}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Refranes
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1586860550}
+        m_TargetAssemblyTypeName: PlayerScript, Assembly-CSharp
+        m_MethodName: checkPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Refranes
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1546659925}
+        m_TargetAssemblyTypeName: InteractScript, Assembly-CSharp
+        m_MethodName: PuzzleHecho
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1546659922}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -22898,6 +22970,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1586860550}
+        m_TargetAssemblyTypeName: PlayerScript, Assembly-CSharp
+        m_MethodName: checkPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1638863272}
+        m_TargetAssemblyTypeName: InteractScript, Assembly-CSharp
+        m_MethodName: PuzzleHecho
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1638863269}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1954228189
 GameObject:
   m_ObjectHideFlags: 0
@@ -23028,6 +23124,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1586860550}
+        m_TargetAssemblyTypeName: PlayerScript, Assembly-CSharp
+        m_MethodName: checkPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1954228192}
+        m_TargetAssemblyTypeName: InteractScript, Assembly-CSharp
+        m_MethodName: PuzzleHecho
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1954228189}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1971178589
 GameObject:
   m_ObjectHideFlags: 0
@@ -23122,10 +23242,34 @@ MonoBehaviour:
   interactAction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1971178589}
+      - m_Target: {fileID: 1971178592}
         m_TargetAssemblyTypeName: InteractScript, Assembly-CSharp
         m_MethodName: CambiarEscena
         m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: PiedraPapelTijeras
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1971178592}
+        m_TargetAssemblyTypeName: InteractScript, Assembly-CSharp
+        m_MethodName: PuzzleHecho
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1971178589}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: PiedraPapelTijeras
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1586860550}
+        m_TargetAssemblyTypeName: PlayerScript, Assembly-CSharp
+        m_MethodName: checkPoint
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -23232,6 +23376,30 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: InteractScript, Assembly-CSharp
         m_MethodName: CambiarEscena
         m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Numeros
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1979693400}
+        m_TargetAssemblyTypeName: InteractScript, Assembly-CSharp
+        m_MethodName: PuzzleHecho
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1979693397}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Numeros
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1586860550}
+        m_TargetAssemblyTypeName: PlayerScript, Assembly-CSharp
+        m_MethodName: checkPoint
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -29,6 +29,7 @@ public class ControlJuego : MonoBehaviour
     public Button boton2;
     public Button boton3;
     public Button botonReinicio;
+    public Button botonSalirNivel;
     public TextMeshProUGUI texto1;
     public TextMeshProUGUI texto2;
     public TextMeshProUGUI texto3;
@@ -166,7 +167,7 @@ public class ControlJuego : MonoBehaviour
         if (respuesta.text == "golondrina")
         {
             fraseAleatoria.text = "¡Correcto! La frase es: Una golondrina no hace verano";
-            botonReinicio.gameObject.SetActive(true);
+            botonSalirNivel.gameObject.SetActive(true);
             boton1.gameObject.SetActive(false);
             boton2.gameObject.SetActive(false);
             boton3.gameObject.SetActive(false);
@@ -174,7 +175,7 @@ public class ControlJuego : MonoBehaviour
         }else if (respuesta.text == "hierro")
         {
             fraseAleatoria.text = "¡Correcto! La frase es: El que a hierro mata, a hierro muere";
-            botonReinicio.gameObject.SetActive(true);
+            botonSalirNivel.gameObject.SetActive(true);
             boton1.gameObject.SetActive(false);
             boton2.gameObject.SetActive(false);
             boton3.gameObject.SetActive(false);
@@ -182,7 +183,7 @@ public class ControlJuego : MonoBehaviour
         }else if (respuesta.text == "clavo")
         {
             fraseAleatoria.text = "¡Correcto! La frase es: Un clavo saca otro clavo";
-            botonReinicio.gameObject.SetActive(true);
+            botonSalirNivel.gameObject.SetActive(true);
             boton1.gameObject.SetActive(false);
             boton2.gameObject.SetActive(false);
             boton3.gameObject.SetActive(false);
@@ -190,7 +191,7 @@ public class ControlJuego : MonoBehaviour
         }else if (respuesta.text == "enemigo")
         {
             fraseAleatoria.text = "¡Correcto! La frase es: A enemigo que huye, puente de plata";
-            botonReinicio.gameObject.SetActive(true);
+            botonSalirNivel.gameObject.SetActive(true);
             boton1.gameObject.SetActive(false);
             boton2.gameObject.SetActive(false);
             boton3.gameObject.SetActive(false);
@@ -199,7 +200,7 @@ public class ControlJuego : MonoBehaviour
         else if (respuesta.text == "avaricia")
         {
             fraseAleatoria.text = "¡Correcto! La frase es: La avaricia rompe el saco";
-            botonReinicio.gameObject.SetActive(true);
+            botonSalirNivel.gameObject.SetActive(true);
             boton1.gameObject.SetActive(false);
             boton2.gameObject.SetActive(false);
             boton3.gameObject.SetActive(false);
@@ -208,7 +209,7 @@ public class ControlJuego : MonoBehaviour
         else if (respuesta.text == "prevenir")
         {
             fraseAleatoria.text = "¡Correcto! La frase es: Más vale prevenir que curar";
-            botonReinicio.gameObject.SetActive(true);
+            botonSalirNivel.gameObject.SetActive(true);
             boton1.gameObject.SetActive(false);
             boton2.gameObject.SetActive(false);
             boton3.gameObject.SetActive(false);
@@ -217,7 +218,7 @@ public class ControlJuego : MonoBehaviour
         else if (respuesta.text == "obligacion")
         {
             fraseAleatoria.text = "¡Correcto! La frase es: Primero es la obligacion que la devoción";
-            botonReinicio.gameObject.SetActive(true);
+            botonSalirNivel.gameObject.SetActive(true);
             boton1.gameObject.SetActive(false);
             boton2.gameObject.SetActive(false);
             boton3.gameObject.SetActive(false);
@@ -226,7 +227,7 @@ public class ControlJuego : MonoBehaviour
         else if (respuesta.text == "necias")
         {
             fraseAleatoria.text = "¡Correcto! La frase es: A palabras necias , oídos sordos";
-            botonReinicio.gameObject.SetActive(true);
+            botonSalirNivel.gameObject.SetActive(true);
             boton1.gameObject.SetActive(false);
             boton2.gameObject.SetActive(false);
             boton3.gameObject.SetActive(false);
@@ -239,7 +240,7 @@ public class ControlJuego : MonoBehaviour
             boton1.gameObject.SetActive(false);
             boton2.gameObject.SetActive(false);
             boton3.gameObject.SetActive(false);
-            Debug.LogError("le has dado al boton incorrecto");
+            Debug.Log("le has dado al boton incorrecto");
             // Aquí podrías agregar lógica adicional, como reiniciar el juego.
         }
 
@@ -248,6 +249,11 @@ public class ControlJuego : MonoBehaviour
     public void BotonReinicio()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
+    }
+
+    public void Nivel1()
+    {
+        SceneManager.LoadScene("Nivel1");
     }
 
 }

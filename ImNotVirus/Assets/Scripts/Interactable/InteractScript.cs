@@ -54,11 +54,14 @@ public class InteractScript : MonoBehaviour
         }
     }
 
+    public void PuzzleHecho(GameObject puzzle)
+    {
+        PlayerPrefs.SetInt(puzzle.name,2);
+    }
+
     public void Unlock(GameObject objectToUnlock)
     {
-        //objectToUnlock.GetComponent<InteractScript>().locked=false;
         PlayerPrefs.SetInt(objectToUnlock.name,1);
-        player.checkPoint();
         Debug.Log("Se ha desbloqueado " + objectToUnlock.name);
     }
 

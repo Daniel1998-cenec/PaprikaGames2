@@ -8,4 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Nivel1.unity
+    guid: 670c54bd207c43e4c9a6aa3089468a99
+  - enabled: 1
+    path: Assets/Scenes/Refranes.unity
+    guid: 34d1848297b5ddc428f1a3e3ce93055d
+  - enabled: 1
+    path: Assets/Scenes/TresEnRaya.unity
+    guid: 569bb8575e647f743b4df7212a8b852a
+  - enabled: 1
+    path: Assets/Scenes/PiedraPapelTijeras.unity
+    guid: 956594fb9e817ec448ad7cc89bb0a33f
+  - enabled: 1
+    path: Assets/Scenes/Acertijos.unity
+    guid: 10f5ddfbc39694242a1570020c0bcd5f
   m_configObjects: {}
