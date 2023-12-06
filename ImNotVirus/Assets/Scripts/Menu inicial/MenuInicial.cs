@@ -5,19 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class MenuInicial : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private ReiniciarCheckpoint reiniciar;
     void Start()
     {
-        
+        reiniciar = GameObject.Find("Control").GetComponent<ReiniciarCheckpoint>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         
     }
 
-    public void Jugar()
+    public void NuevaPartida()
+    {
+        reiniciar.ReiniciarCheckpoints();
+
+        SceneManager.LoadScene("Nivel1");
+    }
+
+    public void Continuar()
     {
         SceneManager.LoadScene("Nivel1");
     }

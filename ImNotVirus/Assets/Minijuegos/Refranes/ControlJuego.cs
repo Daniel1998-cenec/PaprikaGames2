@@ -29,6 +29,7 @@ public class ControlJuego : MonoBehaviour
     
 
     public TextMeshProUGUI fraseAleatoria;
+    public TextMeshProUGUI fraseFinalDelJuego;
     public Button boton1;
     public Button boton2;
     public Button boton3;
@@ -44,6 +45,12 @@ public class ControlJuego : MonoBehaviour
     void Start()
     {
         aciertos = PlayerPrefs.GetInt("aciertos");
+
+        if (aciertos == 3)
+        {
+            FinDelJuego();
+        }
+
         // --------------------------------------------frases-----------------------------------------------------------
         if (Frases.Count == 0)
         {
@@ -170,120 +177,106 @@ public class ControlJuego : MonoBehaviour
 
     public void VerificarRespuesta(TextMeshProUGUI respuesta)
     {
-        if (aciertos < 2)
+        Debug.Log(respuesta.text);
+        if (respuesta.text == "golondrina")
         {
-            Debug.Log(respuesta.text);
-            if (respuesta.text == "golondrina")
-            {
-                aciertos++;
-                PlayerPrefs.SetInt("aciertos", aciertos);
-                fraseAleatoria.text = "¡Correcto! La frase es: Una golondrina no hace verano";
-                botonContinuar.gameObject.SetActive(true);
-                boton1.gameObject.SetActive(false);
-                boton2.gameObject.SetActive(false);
-                boton3.gameObject.SetActive(false);
-                Debug.Log("Le has dado al boton");
-            }
-            else if (respuesta.text == "hierro")
-            {
-                aciertos++;
-                PlayerPrefs.SetInt("aciertos", aciertos);
-                fraseAleatoria.text = "¡Correcto! La frase es: El que a hierro mata, a hierro muere";
-                botonContinuar.gameObject.SetActive(true);
-                boton1.gameObject.SetActive(false);
-                boton2.gameObject.SetActive(false);
-                boton3.gameObject.SetActive(false);
-                Debug.Log("Le has dado al boton");
-            }
-            else if (respuesta.text == "clavo")
-            {
-                aciertos++;
-                PlayerPrefs.SetInt("aciertos", aciertos);
-                fraseAleatoria.text = "¡Correcto! La frase es: Un clavo saca otro clavo";
-                botonContinuar.gameObject.SetActive(true);
-                boton1.gameObject.SetActive(false);
-                boton2.gameObject.SetActive(false);
-                boton3.gameObject.SetActive(false);
-                Debug.Log("Le has dado al boton");
-            }
-            else if (respuesta.text == "enemigo")
-            {
-                aciertos++;
-                PlayerPrefs.SetInt("aciertos", aciertos);
-                fraseAleatoria.text = "¡Correcto! La frase es: A enemigo que huye, puente de plata";
-                botonContinuar.gameObject.SetActive(true);
-                boton1.gameObject.SetActive(false);
-                boton2.gameObject.SetActive(false);
-                boton3.gameObject.SetActive(false);
-                Debug.Log("Le has dado al boton");
-            }
-            else if (respuesta.text == "avaricia")
-            {
-                aciertos++;
-                PlayerPrefs.SetInt("aciertos", aciertos);
-                fraseAleatoria.text = "¡Correcto! La frase es: La avaricia rompe el saco";
-                botonContinuar.gameObject.SetActive(true);
-                boton1.gameObject.SetActive(false);
-                boton2.gameObject.SetActive(false);
-                boton3.gameObject.SetActive(false);
-                Debug.Log("Le has dado al boton");
-            }
-            else if (respuesta.text == "prevenir")
-            {
-                aciertos++;
-                PlayerPrefs.SetInt("aciertos", aciertos);
-                fraseAleatoria.text = "¡Correcto! La frase es: Más vale prevenir que curar";
-                botonContinuar.gameObject.SetActive(true);
-                boton1.gameObject.SetActive(false);
-                boton2.gameObject.SetActive(false);
-                boton3.gameObject.SetActive(false);
-                Debug.Log("Le has dado al boton");
-            }
-            else if (respuesta.text == "obligacion")
-            {
-                aciertos++;
-                PlayerPrefs.SetInt("aciertos", aciertos);
-                fraseAleatoria.text = "¡Correcto! La frase es: Primero es la obligacion que la devoción";
-                botonContinuar.gameObject.SetActive(true);
-                boton1.gameObject.SetActive(false);
-                boton2.gameObject.SetActive(false);
-                boton3.gameObject.SetActive(false);
-                Debug.Log("Le has dado al boton");
-            }
-            else if (respuesta.text == "necias")
-            {
-                aciertos++;
-                PlayerPrefs.SetInt("aciertos", aciertos);
-                fraseAleatoria.text = "¡Correcto! La frase es: A palabras necias , oídos sordos";
-                botonContinuar.gameObject.SetActive(true);
-                boton1.gameObject.SetActive(false);
-                boton2.gameObject.SetActive(false);
-                boton3.gameObject.SetActive(false);
-                Debug.Log("Le has dado al boton");
-            }
-            else
-            {
-                PlayerPrefs.SetInt("aciertos", 0);
-                fraseAleatoria.text = "Te has equivocado. Fin del juego.";
-                botonReinicio.gameObject.SetActive(true);
-                boton1.gameObject.SetActive(false);
-                boton2.gameObject.SetActive(false);
-                boton3.gameObject.SetActive(false);
-                Debug.Log("le has dado al boton incorrecto");
-                // Aquí podrías agregar lógica adicional, como reiniciar el juego.
-            }
-        } else
-        {
-            PlayerPrefs.SetInt("aciertos", 0);
-            fraseAleatoria.text = "Has completado el juego";
-            botonSalir.gameObject.SetActive(true);
+            aciertos++;
+            PlayerPrefs.SetInt("aciertos", aciertos);
+            fraseAleatoria.text = "¡Correcto! La frase es: Una golondrina no hace verano";
+            botonContinuar.gameObject.SetActive(true);
             boton1.gameObject.SetActive(false);
             boton2.gameObject.SetActive(false);
             boton3.gameObject.SetActive(false);
-            Debug.Log("Le has dado al botón salir nivel");
-            
+            Debug.Log("Le has dado al boton");
         }
-       
+        else if (respuesta.text == "hierro")
+        {
+            aciertos++;
+            PlayerPrefs.SetInt("aciertos", aciertos);
+            fraseAleatoria.text = "¡Correcto! La frase es: El que a hierro mata, a hierro muere";
+            botonContinuar.gameObject.SetActive(true);
+            boton1.gameObject.SetActive(false);
+            boton2.gameObject.SetActive(false);
+            boton3.gameObject.SetActive(false);
+            Debug.Log("Le has dado al boton");
+        }
+        else if (respuesta.text == "clavo")
+        {
+            aciertos++;
+            PlayerPrefs.SetInt("aciertos", aciertos);
+            fraseAleatoria.text = "¡Correcto! La frase es: Un clavo saca otro clavo";
+            botonContinuar.gameObject.SetActive(true);
+            boton1.gameObject.SetActive(false);
+            boton2.gameObject.SetActive(false);
+            boton3.gameObject.SetActive(false);
+            Debug.Log("Le has dado al boton");
+        }
+        else if (respuesta.text == "enemigo")
+        {
+            aciertos++;
+            PlayerPrefs.SetInt("aciertos", aciertos);
+            fraseAleatoria.text = "¡Correcto! La frase es: A enemigo que huye, puente de plata";
+            botonContinuar.gameObject.SetActive(true);
+            boton1.gameObject.SetActive(false);
+            boton2.gameObject.SetActive(false);
+            boton3.gameObject.SetActive(false);
+            Debug.Log("Le has dado al boton");
+        }
+        else if (respuesta.text == "avaricia")
+        {
+            aciertos++;
+            PlayerPrefs.SetInt("aciertos", aciertos);
+            fraseAleatoria.text = "¡Correcto! La frase es: La avaricia rompe el saco";
+            botonContinuar.gameObject.SetActive(true);
+            boton1.gameObject.SetActive(false);
+            boton2.gameObject.SetActive(false);
+            boton3.gameObject.SetActive(false);
+            Debug.Log("Le has dado al boton");
+        }
+        else if (respuesta.text == "prevenir")
+        {
+            aciertos++;
+            PlayerPrefs.SetInt("aciertos", aciertos);
+            fraseAleatoria.text = "¡Correcto! La frase es: Más vale prevenir que curar";
+            botonContinuar.gameObject.SetActive(true);
+            boton1.gameObject.SetActive(false);
+            boton2.gameObject.SetActive(false);
+            boton3.gameObject.SetActive(false);
+            Debug.Log("Le has dado al boton");
+        }
+        else if (respuesta.text == "obligacion")
+        {
+            aciertos++;
+            PlayerPrefs.SetInt("aciertos", aciertos);
+            fraseAleatoria.text = "¡Correcto! La frase es: Primero es la obligacion que la devoción";
+            botonContinuar.gameObject.SetActive(true);
+            boton1.gameObject.SetActive(false);
+            boton2.gameObject.SetActive(false);
+            boton3.gameObject.SetActive(false);
+            Debug.Log("Le has dado al boton");
+        }
+        else if (respuesta.text == "necias")
+        {
+            aciertos++;
+            PlayerPrefs.SetInt("aciertos", aciertos);
+            fraseAleatoria.text = "¡Correcto! La frase es: A palabras necias , oídos sordos";
+            botonContinuar.gameObject.SetActive(true);
+            boton1.gameObject.SetActive(false);
+            boton2.gameObject.SetActive(false);
+            boton3.gameObject.SetActive(false);
+            Debug.Log("Le has dado al boton");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("aciertos", 0);
+            fraseAleatoria.text = "Te has equivocado. Fin del juego.";
+            botonReinicio.gameObject.SetActive(true);
+            boton1.gameObject.SetActive(false);
+            boton2.gameObject.SetActive(false);
+            boton3.gameObject.SetActive(false);
+            Debug.Log("le has dado al boton incorrecto");
+            // Aquí podrías agregar lógica adicional, como reiniciar el juego.
+        } 
 
     }
 
@@ -300,4 +293,17 @@ public class ControlJuego : MonoBehaviour
     {
         SceneManager.LoadScene("Nivel1");
     }
+
+    public void FinDelJuego()
+    {
+        PlayerPrefs.SetInt("aciertos", 0);
+        fraseFinalDelJuego.gameObject.SetActive(true);
+        fraseAleatoria.gameObject.SetActive(false);
+        botonSalir.gameObject.SetActive(true);
+        boton1.gameObject.SetActive(false);
+        boton2.gameObject.SetActive(false);
+        boton3.gameObject.SetActive(false);
+        Debug.Log("Le has dado al botón salir nivel");
+    }
+
 }
