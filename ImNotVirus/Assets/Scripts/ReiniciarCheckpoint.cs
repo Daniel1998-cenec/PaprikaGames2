@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Control : MonoBehaviour
+public class ReiniciarCheckpoint : MonoBehaviour
 {   
     void Start()
     {
@@ -24,6 +24,7 @@ public class Control : MonoBehaviour
 
         PlayerPrefs.SetFloat("xPos", 0.0f);
         PlayerPrefs.SetFloat("yPos", 0.0f);
+        PlayerPrefs.SetInt("Comienzo", 0);
         PlayerPrefs.SetInt("Palanca", 1);
         PlayerPrefs.SetInt("Electricidad1", 0);
         PlayerPrefs.SetInt("Refranes", 0);

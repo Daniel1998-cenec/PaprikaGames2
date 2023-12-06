@@ -54,11 +54,15 @@ public class InteractScript : MonoBehaviour
         }
     }
 
+    //una vez tenga todos los puzzles, hacer que esto se haga en la escena de cada uno de los puzzles antes de cargar la escena de nivel1,
+    //para evitar que se cierre el juego sin hacer el puzzle y que lo dé por hecho.
     public void PuzzleHecho(GameObject puzzle)
     {
         PlayerPrefs.SetInt(puzzle.name,2);
     }
 
+    //una vez tenga todos los puzzles, hacer que esto se haga en la escena de cada uno de los puzzles antes de cargar la escena de nivel1
+    //para evitar que se cierre el juego sin hacer el puzzle y que lo dé por hecho.
     public void Unlock(GameObject objectToUnlock)
     {
         PlayerPrefs.SetInt(objectToUnlock.name,1);

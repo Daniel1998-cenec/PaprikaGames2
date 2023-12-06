@@ -9,19 +9,25 @@ public class PlayerScript : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator anim;
+    //public GameObject control;
+    //private ReiniciarCheckpoint reinicio;
 
     void Start()
     {
+        //reinicio = control.GetComponent<ReiniciarCheckpoint>();
+
         Debug.Log("PlayerPrefs:\nPosicion X: " + PlayerPrefs.GetInt("xPos")
         + "\nPosicion Y: " + PlayerPrefs.GetInt("yPos")
+        + "\nComienzo: " + PlayerPrefs.GetInt("Comienzo")
+        //+ "\nTutorial: " + PlayerPrefs.GetInt("Tutorial")
         + "\nPalanca: " + PlayerPrefs.GetInt("Palanca")
-        + "\nElectricidad1 " + PlayerPrefs.GetInt("Electricidad1")
-        + "\nRefranes " + PlayerPrefs.GetInt("Refranes")
-        + "\nElectricidad2 " + PlayerPrefs.GetInt("Electricidad2")
-        + "\nTresEnRaya " + PlayerPrefs.GetInt("TresEnRaya")
-        + "\nPiedraPapelTijeras " + PlayerPrefs.GetInt("PiedraPapelTijeras")
-        + "\nAcertijos " + PlayerPrefs.GetInt("Acertijos")
-        + "\nNumeros " + PlayerPrefs.GetInt("Numeros"));
+        + "\nElectricidad1: " + PlayerPrefs.GetInt("Electricidad1")
+        + "\nRefranes: " + PlayerPrefs.GetInt("Refranes")
+        + "\nElectricidad2: " + PlayerPrefs.GetInt("Electricidad2")
+        + "\nTresEnRaya: " + PlayerPrefs.GetInt("TresEnRaya")
+        + "\nPiedraPapelTijeras: " + PlayerPrefs.GetInt("PiedraPapelTijeras")
+        + "\nAcertijos: " + PlayerPrefs.GetInt("Acertijos")
+        + "\nNumeros: " + PlayerPrefs.GetInt("Numeros"));
 
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();

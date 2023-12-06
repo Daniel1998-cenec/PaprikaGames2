@@ -21,13 +21,13 @@ public class CatScript : MonoBehaviour
     private void Lick()
     {
         anim.SetBool("Lick", true);
-        Debug.Log("Gato se lame");
+        //Debug.Log("Gato se lame");
     }
 
     private void StopLick()
     {
         anim.SetBool("Lick", false);
-        Debug.Log("Gato se deja de lamer");
+        //Debug.Log("Gato se deja de lamer");
     }
 
     IEnumerator LickAnim()

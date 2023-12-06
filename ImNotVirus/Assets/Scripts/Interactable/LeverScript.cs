@@ -5,10 +5,16 @@ using UnityEngine;
 public class LeverScript : MonoBehaviour
 {
     Animator anim;
-    bool active = false;
+    public bool active = false;
     void Start()
     {
         anim = GetComponent<Animator>();
+
+        if(PlayerPrefs.GetInt("Palanca")!=0)
+        {
+            activeLever();
+        }
+
     }
 
     void Update()
@@ -20,7 +26,7 @@ public class LeverScript : MonoBehaviour
     {
         anim.SetBool("Active", true);
         active = true;
-        Debug.Log("Se ha activado la palanca.");
+        //Debug.Log("Se ha activado la palanca.");
     }
 
     public void switchLever()
@@ -29,13 +35,13 @@ public class LeverScript : MonoBehaviour
         {
             anim.SetBool("Active", true);
             active = true;
-            Debug.Log("Ha activado el switch.");
+            //Debug.Log("Ha activado el switch.");
         }
         else
         {
             anim.SetBool("Active", false);
             active = false;
-            Debug.Log("Ha desactivado el switch.");
+            //Debug.Log("Ha desactivado el switch.");
 
         }
     }
