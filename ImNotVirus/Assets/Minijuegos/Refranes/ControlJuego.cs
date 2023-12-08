@@ -26,8 +26,6 @@ public class ControlJuego : MonoBehaviour
         "golondrina","jirafa","mariposa","hierro","lingote","barra","clavo","tornillo","clavija","enemigo","antagonista","villano, avaricia, ambicion, suerte, prevenir, reemplazar, anticiparse, obligacion, exigencia, esperanza, necias, acefalas, simples"
     };
 
-    
-
     public TextMeshProUGUI fraseAleatoria;
     public TextMeshProUGUI fraseFinalDelJuego;
     public Button boton1;
@@ -39,6 +37,7 @@ public class ControlJuego : MonoBehaviour
     public TextMeshProUGUI texto1;
     public TextMeshProUGUI texto2;
     public TextMeshProUGUI texto3;
+    public TextMeshProUGUI textContador;
     private int aciertos;
 
     // Start is called before the first frame update
@@ -181,6 +180,7 @@ public class ControlJuego : MonoBehaviour
         if (respuesta.text == "golondrina")
         {
             aciertos++;
+            actualizarTexto();
             PlayerPrefs.SetInt("aciertos", aciertos);
             fraseAleatoria.text = "¡Correcto! La frase es: Una golondrina no hace verano";
             botonContinuar.gameObject.SetActive(true);
@@ -192,6 +192,7 @@ public class ControlJuego : MonoBehaviour
         else if (respuesta.text == "hierro")
         {
             aciertos++;
+            actualizarTexto();
             PlayerPrefs.SetInt("aciertos", aciertos);
             fraseAleatoria.text = "¡Correcto! La frase es: El que a hierro mata, a hierro muere";
             botonContinuar.gameObject.SetActive(true);
@@ -203,6 +204,7 @@ public class ControlJuego : MonoBehaviour
         else if (respuesta.text == "clavo")
         {
             aciertos++;
+            actualizarTexto();
             PlayerPrefs.SetInt("aciertos", aciertos);
             fraseAleatoria.text = "¡Correcto! La frase es: Un clavo saca otro clavo";
             botonContinuar.gameObject.SetActive(true);
@@ -214,6 +216,7 @@ public class ControlJuego : MonoBehaviour
         else if (respuesta.text == "enemigo")
         {
             aciertos++;
+            actualizarTexto();
             PlayerPrefs.SetInt("aciertos", aciertos);
             fraseAleatoria.text = "¡Correcto! La frase es: A enemigo que huye, puente de plata";
             botonContinuar.gameObject.SetActive(true);
@@ -224,7 +227,8 @@ public class ControlJuego : MonoBehaviour
         }
         else if (respuesta.text == "avaricia")
         {
-            aciertos++;
+            aciertos++; 
+            actualizarTexto();
             PlayerPrefs.SetInt("aciertos", aciertos);
             fraseAleatoria.text = "¡Correcto! La frase es: La avaricia rompe el saco";
             botonContinuar.gameObject.SetActive(true);
@@ -236,6 +240,7 @@ public class ControlJuego : MonoBehaviour
         else if (respuesta.text == "prevenir")
         {
             aciertos++;
+            actualizarTexto();
             PlayerPrefs.SetInt("aciertos", aciertos);
             fraseAleatoria.text = "¡Correcto! La frase es: Más vale prevenir que curar";
             botonContinuar.gameObject.SetActive(true);
@@ -247,6 +252,7 @@ public class ControlJuego : MonoBehaviour
         else if (respuesta.text == "obligacion")
         {
             aciertos++;
+            actualizarTexto();
             PlayerPrefs.SetInt("aciertos", aciertos);
             fraseAleatoria.text = "¡Correcto! La frase es: Primero es la obligacion que la devoción";
             botonContinuar.gameObject.SetActive(true);
@@ -258,6 +264,7 @@ public class ControlJuego : MonoBehaviour
         else if (respuesta.text == "necias")
         {
             aciertos++;
+            actualizarTexto();
             PlayerPrefs.SetInt("aciertos", aciertos);
             fraseAleatoria.text = "¡Correcto! La frase es: A palabras necias , oídos sordos";
             botonContinuar.gameObject.SetActive(true);
@@ -268,8 +275,9 @@ public class ControlJuego : MonoBehaviour
         }
         else
         {
+            actualizarTexto();
             PlayerPrefs.SetInt("aciertos", 0);
-            fraseAleatoria.text = "Te has equivocado. Fin del juego.";
+            fraseAleatoria.text = "Te has equivocado. Intentalo de nuevo D:";
             botonReinicio.gameObject.SetActive(true);
             boton1.gameObject.SetActive(false);
             boton2.gameObject.SetActive(false);
@@ -288,6 +296,7 @@ public class ControlJuego : MonoBehaviour
     public void BotonContinuar()
     {
         SceneManager.LoadScene("Refranes");
+
     }
     public void BotonSalir()
     {
@@ -305,5 +314,12 @@ public class ControlJuego : MonoBehaviour
         boton3.gameObject.SetActive(false);
         Debug.Log("Le has dado al botón salir nivel");
     }
+
+    public void actualizarTexto()
+    {
+        textContador.text = "Aciertos: " + aciertos.ToString();
+    }
+
+    
 
 }

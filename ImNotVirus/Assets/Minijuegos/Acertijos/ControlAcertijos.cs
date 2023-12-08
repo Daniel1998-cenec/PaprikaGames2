@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -8,9 +9,14 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 public class ControlAcertijos : MonoBehaviour
 {
-    public TMP_Text acertijoText;
+    public TextMeshProUGUI acertijoText;
+    public TextMeshProUGUI fraseFinalDelJuego;
     public TMP_InputField respuestaInput;
     public Button botonReinicio;
+    public Button botonContinuar;
+    public Button botonSalir;
+    public TextMeshProUGUI textContador;
+    private int aciertos;
 
     private List<string> acertijos = new List<string>
     {
@@ -34,6 +40,14 @@ public class ControlAcertijos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        aciertos = PlayerPrefs.GetInt("aciertos");
+
+        if (aciertos == 3)
+        {
+            FinDelJuego();
+        }
+
         MostrarAcertijoRandom();
 
         // Suscribir la función ComprobarRespuesta a la detección de la tecla "Enter"
@@ -50,7 +64,7 @@ public class ControlAcertijos : MonoBehaviour
 
     void MostrarAcertijoRandom()
     {
-        int indiceRandom = Random.Range(0, acertijos.Count);
+        int indiceRandom = UnityEngine.Random.Range(0, acertijos.Count);
         acertijoText.text = acertijos[indiceRandom];
     }
 
@@ -60,68 +74,100 @@ public class ControlAcertijos : MonoBehaviour
 
         if (respuestaUsuario == respuestas[0] && acertijoText.text== "Por un caminito, va caminando un bicho. El nombre del bicho ya te lo he dicho")
         {
+            aciertos++;
+            actualizarTexto();
+            PlayerPrefs.SetInt("aciertos", aciertos);
             acertijoText.text = "¡Correcto!, has acertado el acertijo";
-            botonReinicio.gameObject.SetActive(true);
+            botonContinuar.gameObject.SetActive(true);
             respuestaInput.gameObject.SetActive(false);
             Debug.Log("Muy bien, sigue así");
             // Aquí puedes realizar acciones adicionales si la respuesta es correcta
         } else if (respuestaUsuario == respuestas[1] && acertijoText.text == "Húmedo por dentro, con pelos por fuera. Comienza por la C. ¿De qué se trata?")
         {
+            aciertos++;
+            actualizarTexto();
+            PlayerPrefs.SetInt("aciertos", aciertos);
             acertijoText.text = "¡Correcto!, has acertado el acertijo";
-            botonReinicio.gameObject.SetActive(true);
+            botonContinuar.gameObject.SetActive(true);
             respuestaInput.gameObject.SetActive(false);
             Debug.Log("Muy bien, sigue así");
         } else if (respuestaUsuario == respuestas[2] && acertijoText.text == "Lo levanto cuando estoy contento, pero es más pequeño que el resto. ¿Qué es?")
         {
+            aciertos++;
+            actualizarTexto();
+            PlayerPrefs.SetInt("aciertos", aciertos);
             acertijoText.text = "¡Correcto!, has acertado el acertijo";
-            botonReinicio.gameObject.SetActive(true);
+            botonContinuar.gameObject.SetActive(true);
             respuestaInput.gameObject.SetActive(false);
             Debug.Log("Muy bien, sigue así");
         } else if (respuestaUsuario == respuestas[3] && acertijoText.text == "Tiene famosa memoria, gran tamaño y dura piel y la nariz más grandota, que en el mundo pueda haber")
         {
+            aciertos++;
+            actualizarTexto();
+            PlayerPrefs.SetInt("aciertos", aciertos);
             acertijoText.text = "¡Correcto!, has acertado el acertijo";
-            botonReinicio.gameObject.SetActive(true);
+            botonContinuar.gameObject.SetActive(true);
             respuestaInput.gameObject.SetActive(false);
             Debug.Log("Muy bien, sigue así");
         } else if (respuestaUsuario == respuestas[4] && acertijoText.text == "En rincones y entre ramas mis redes voy construyendo, para que moscas incautas, en ellas vayan cayendo")
         {
+            aciertos++;
+            actualizarTexto();
+            PlayerPrefs.SetInt("aciertos", aciertos);
             acertijoText.text = "¡Correcto!, has acertado el acertijo";
-            botonReinicio.gameObject.SetActive(true);
+            botonContinuar.gameObject.SetActive(true);
             respuestaInput.gameObject.SetActive(false);
             Debug.Log("Muy bien, sigue así");
         } else if (respuestaUsuario == respuestas[5] && acertijoText.text == "Orejas largas, rabo cortito, corro y salto muy ligerito")
         {
+            aciertos++;
+            actualizarTexto();
+            PlayerPrefs.SetInt("aciertos", aciertos);
             acertijoText.text = "¡Correcto!, has acertado el acertijo";
-            botonReinicio.gameObject.SetActive(true);
+            botonContinuar.gameObject.SetActive(true);
             respuestaInput.gameObject.SetActive(false);
             Debug.Log("Muy bien, sigue así");
         } else if (respuestaUsuario == respuestas[6] && acertijoText.text == "Me llegan las cartas y no sé leer y, aunque me las trago, no mancho el papel. ¿Qué es?")
         {
+            aciertos++;
+            actualizarTexto();
+            PlayerPrefs.SetInt("aciertos", aciertos);
             acertijoText.text = "¡Correcto!, has acertado el acertijo";
-            botonReinicio.gameObject.SetActive(true);
+            botonContinuar.gameObject.SetActive(true);
             respuestaInput.gameObject.SetActive(false);
             Debug.Log("Muy bien, sigue así");
         } else if (respuestaUsuario == respuestas[7] && acertijoText.text == "Es pequeña como una pera, pero alumbra la casa entera. ¿Qué es?")
         {
+            aciertos++;
+            actualizarTexto();
+            PlayerPrefs.SetInt("aciertos", aciertos);
             acertijoText.text = "¡Correcto!, has acertado el acertijo";
-            botonReinicio.gameObject.SetActive(true);
+            botonContinuar.gameObject.SetActive(true);
             respuestaInput.gameObject.SetActive(false);
             Debug.Log("Muy bien, sigue así");
         } else if (respuestaUsuario == respuestas[8] && acertijoText.text == "Tengo teclas, pero no puedo tocar música. Tengo letras, pero no puedo hablar. ¿Qué soy?")
         {
+            aciertos++;
+            actualizarTexto();
+            PlayerPrefs.SetInt("aciertos", aciertos);
             acertijoText.text = "¡Correcto!, has acertado el acertijo";
-            botonReinicio.gameObject.SetActive(true);
+            botonContinuar.gameObject.SetActive(true);
             respuestaInput.gameObject.SetActive(false);
             Debug.Log("Muy bien, sigue así");
         }else if (respuestaUsuario == respuestas[9] && acertijoText.text == "¿Quién allá en lo alto en las ramas mora y allí esconde, avara, todo lo que roba?")
         {
+            aciertos++;
+            actualizarTexto();
+            PlayerPrefs.SetInt("aciertos", aciertos);
             acertijoText.text = "¡Correcto!, has acertado el acertijo";
-            botonReinicio.gameObject.SetActive(true);
+            botonContinuar.gameObject.SetActive(true);
             respuestaInput.gameObject.SetActive(false);
             Debug.Log("Muy bien, sigue así");
         }
         else
         {
+            actualizarTexto();
+            PlayerPrefs.SetInt("aciertos", 0);
             acertijoText.text = "¡Incorrecto!, no has acertado el acertijo :(";
             botonReinicio.gameObject.SetActive(true);
             respuestaInput.gameObject.SetActive(false);
@@ -140,6 +186,31 @@ public class ControlAcertijos : MonoBehaviour
     public void BotonReinicio()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void BotonContinuar()
+    {
+        SceneManager.LoadScene("Acertijos");
+    }
+
+    public void FinDelJuego()
+    {
+        PlayerPrefs.SetInt("aciertos", 0);
+        fraseFinalDelJuego.gameObject.SetActive(true);
+        acertijoText.gameObject.SetActive(false);
+        respuestaInput.gameObject.SetActive(false);
+        botonSalir.gameObject.SetActive(true);
+        Debug.Log("Le has dado al botón salir nivel");
+    }
+
+    public void actualizarTexto()
+    {
+        textContador.text = "Aciertos: " + aciertos.ToString();
+    }
+
+    public void BotonSalir()
+    {
+        SceneManager.LoadScene("Nivel1");
     }
 }
 
