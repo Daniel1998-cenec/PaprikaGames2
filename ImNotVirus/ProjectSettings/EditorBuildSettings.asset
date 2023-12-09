@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/MenuInicio.unity
-    guid: fe58d1455dfd2864385616fca02bb037
+    guid: 0d57daa39319e2648bda222b591ca2e4
   - enabled: 1
     path: Assets/Scenes/Nivel1.unity
     guid: 670c54bd207c43e4c9a6aa3089468a99
@@ -26,4 +26,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Acertijos.unity
     guid: 10f5ddfbc39694242a1570020c0bcd5f
+  - enabled: 1
+    path: Assets/Scenes/InicioAcertijo.unity
+    guid: f48daaa6aec6795419d3b482789df026
+  - enabled: 1
+    path: Assets/Scenes/InicioRefran.unity
+    guid: 70f06aa7b75b46641b014448a185a145
+  - enabled: 1
+    path: Assets/Scenes/PantallaHistoria.unity
+    guid: 57c529982a54ab74a9b05f6e1a1e4503
   m_configObjects: {}

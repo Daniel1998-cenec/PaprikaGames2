@@ -21,7 +21,7 @@ public class MenuInicial : MonoBehaviour
     {
         reiniciar.ReiniciarCheckpoints();
 
-        SceneManager.LoadScene("Nivel1");
+        SceneManager.LoadScene("PantallaHistoria");
     }
 
     public void Continuar()
