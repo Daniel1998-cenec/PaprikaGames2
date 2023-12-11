@@ -16,33 +16,25 @@ public class PantallaHistoria : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        empezarDialogo();
+        EmpezarDialogo();
+        Invoke("SiguienteLinea", 4);
+        Invoke("SiguienteLinea", 12);
+        Invoke("SiguienteLinea",17);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (textoHistoria.text == lineas[index])
-            {
-                SiguienteLinea();
-            }
-            else
-            {
-                StopAllCoroutines();
-                textoHistoria.text = lineas[index];
-            }
-        }
+        
     }
 
-    public void empezarDialogo()
+    public void EmpezarDialogo()
     {
         index = 0;
-        StartCoroutine(escribirLinea());
+        StartCoroutine(EscribirLinea());
     }
 
-    IEnumerator escribirLinea()
+    IEnumerator EscribirLinea()
     {
         foreach (char letter in lineas[index].ToCharArray())
         {
@@ -57,7 +49,8 @@ public class PantallaHistoria : MonoBehaviour
         {
             index++;
             textoHistoria.text = string.Empty;
-            StartCoroutine(escribirLinea());
+            
+            StartCoroutine(EscribirLinea());
         }
         else
         {
