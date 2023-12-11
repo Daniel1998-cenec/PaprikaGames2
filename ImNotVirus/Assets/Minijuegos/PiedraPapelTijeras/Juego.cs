@@ -14,6 +14,7 @@ public class Juego : MonoBehaviour
     public Button botonPapelJugador;
     public Button botonTijerasJugador;
     public Button botonSalir;
+    public Button botonReiniciar;
     public RawImage piedraOponente;
     public RawImage papelOponente;
     public RawImage tijerasOponente;
@@ -104,20 +105,23 @@ public class Juego : MonoBehaviour
             switch (resultado)
             {
                 case 0:
-                    textoResultado.SetText("�Has Perdido!");
+                    textoResultado.SetText("¡Has Perdido!");
+                    botonReiniciar.gameObject.SetActive(true);
                     break;
                 case 1:
-                    textoResultado.SetText("�Has Ganado!");
+                    textoResultado.SetText("¡Has Ganado!");
+                    botonSalir.gameObject.SetActive(true);
                     break;
                 case 2:
-                    textoResultado.SetText("�Hab�is empatado!");
+                    textoResultado.SetText("¡Habéis empatado!");
+                    botonReiniciar.gameObject.SetActive(true);
                     break;
             }
 
             MostrarImagenes((byte)eleccion, eleccionOponente);
             textoTitulo.gameObject.SetActive(false);
             textoResultado.gameObject.SetActive(true);
-            botonSalir.gameObject.SetActive(true);
+            
             juegoActivo = false;
         } // if
     } // method
@@ -126,6 +130,11 @@ public class Juego : MonoBehaviour
     {
         // Aqui se mete lo que haga falta para cambiar de escena.
         SceneManager.LoadScene("Nivel1");
+    }
+
+    public void ReiniciarJuego()
+    {
+        SceneManager.LoadScene("PiedraPapelTijeras");
     }
 
 }
