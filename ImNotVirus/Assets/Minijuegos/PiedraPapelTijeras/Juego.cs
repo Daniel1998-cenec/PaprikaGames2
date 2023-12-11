@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Juego : MonoBehaviour
@@ -103,13 +104,13 @@ public class Juego : MonoBehaviour
             switch (resultado)
             {
                 case 0:
-                    textoResultado.SetText("¡Has Perdido!");
+                    textoResultado.SetText("ï¿½Has Perdido!");
                     break;
                 case 1:
-                    textoResultado.SetText("¡Has Ganado!");
+                    textoResultado.SetText("ï¿½Has Ganado!");
                     break;
                 case 2:
-                    textoResultado.SetText("¡Habéis empatado!");
+                    textoResultado.SetText("ï¿½Habï¿½is empatado!");
                     break;
             }
 
@@ -124,6 +125,7 @@ public class Juego : MonoBehaviour
     public void SalirJuego()
     {
         // Aqui se mete lo que haga falta para cambiar de escena.
+        SceneManager.LoadScene("Nivel1");
     }
 
 }
