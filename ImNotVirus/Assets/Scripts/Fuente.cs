@@ -2,39 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Dialogue2Script : MonoBehaviour
+public class Fuente : MonoBehaviour
 {
-    public GameObject gato;
     public GameObject dialogue;
     public TextMeshProUGUI text;
     public string[] lines;
-    public float tiempoEspera = 0.07f;
+    public float tiempoEspera = 0.04f;
     private int index;
     private bool mensaje;
-
-    void Awake()
-    {
-        Comprobar();
-    }
-
-    private void Comprobar()
-    {
-        if(PlayerPrefs.GetInt("Palanca")==2){
-            gato.gameObject.SetActive(false);
-        }
-        
-        dialogue.gameObject.SetActive(false);
-        text.text="";
-        index=0;
-    }
-
+    
+    // Start is called before the first frame update
     void Start()
     {
         
     }
 
+    // Update is called once per frame
     void Update()
     {
         if(mensaje){
@@ -46,7 +30,6 @@ public class Dialogue2Script : MonoBehaviour
             
             }
         }
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -84,13 +67,5 @@ public class Dialogue2Script : MonoBehaviour
             text.text += letter;
             yield return new WaitForSeconds(tiempoEspera);
         }
-    }
-
-    public void Despedida()
-    {
-        Debug.Log("Despedida");
-        StopAllCoroutines();
-        index++;
-        StartCoroutine(WriteLine());
     }
 }

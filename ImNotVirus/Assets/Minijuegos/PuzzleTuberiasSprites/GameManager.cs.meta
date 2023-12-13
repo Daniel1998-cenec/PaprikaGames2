@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 706de013d21c31d4f9b9d89d1cc4b94a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - PipesHolder: {fileID: 5692645395416349071, guid: 365337c6c62ddbd4a8e128688cf50abe, type: 3}
+  - WinText: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

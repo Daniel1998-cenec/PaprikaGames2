@@ -57,6 +57,7 @@ public class ControlScript : MonoBehaviour
                 Debug.Log("Has Ganado.");
                 textoGanar.gameObject.SetActive(true);
                 botonSalir.gameObject.SetActive(true);
+                PlayerPrefs.SetInt("TresEnRaya",2);
             }else{
                 Debug.Log("Has Perdido.");
                 textoPerder.gameObject.SetActive(true);

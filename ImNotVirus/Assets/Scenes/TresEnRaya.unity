@@ -546,7 +546,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 465004f9d70dc1140b572e48a8e72331, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 06ed0930c3e0d38459107101f51676e6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -738,7 +738,7 @@ MonoBehaviour:
   imagenes:
   - {fileID: 21300000, guid: 4f1ec3959f633234295fa0789742fda0, type: 3}
   - {fileID: 21300000, guid: b08add62bd71cbc46a59f90e65260afa, type: 3}
-  - {fileID: 21300000, guid: 40976994bafa7784ba5f60c4a8acab91, type: 3}
+  - {fileID: 21300000, guid: 4a1d0b2379e5a914db238f4a51a9c9e0, type: 3}
   textoGanar: {fileID: 2106782733}
   textoPerder: {fileID: 1192510380}
   textoEmpate: {fileID: 1332004810}
@@ -1636,7 +1636,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &801919648

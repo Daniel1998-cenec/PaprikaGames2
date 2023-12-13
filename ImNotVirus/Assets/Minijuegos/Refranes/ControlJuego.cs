@@ -16,9 +16,9 @@ public class ControlJuego : MonoBehaviour
         "Un _ _ _ _ _ saca otro _ _ _ _ _",
         "A _ _ _ _ _ _ _ que huye, puente de plata",
         "La _ _ _ _ _ _ _ _ rompe el saco",
-        "Más vale _ _ _ _ _ _ _ _ que curar",
-        "Primero es la _ _ _ _ _ _ _ _ _ que la devoción",
-        "A palabras _ _ _ _ _ _ , oídos sordos"
+        "MÃ¡s vale _ _ _ _ _ _ _ _ que curar",
+        "Primero es la _ _ _ _ _ _ _ _ _ que la devociÃ³n",
+        "A palabras _ _ _ _ _ _ , oÃ­dos sordos"
 
     };
     public List<string> botones = new List<string>
@@ -53,14 +53,14 @@ public class ControlJuego : MonoBehaviour
         // --------------------------------------------frases-----------------------------------------------------------
         if (Frases.Count == 0)
         {
-            Debug.LogError("La lista de frases está vacía. Asegúrate de añadir frases en el Inspector.");
+            Debug.LogError("La lista de frases estï¿½ vacï¿½a. Asegï¿½rate de aï¿½adir frases en el Inspector.");
             return;
         }
 
         // Mezclar las frases usando el algoritmo de Fisher-Yates
         FrasesAleatorias();
 
-        // Obtener la primera frase de la lista (que ahora está mezclada)
+        // Obtener la primera frase de la lista (que ahora estï¿½ mezclada)
         string primeraFrase = Frases[0];
 
         // Mostrar la primera frase en el TextMeshProUGUI
@@ -70,7 +70,7 @@ public class ControlJuego : MonoBehaviour
         }
         else
         {
-            Debug.LogError("El componente TextMeshProUGUI no está asignado en el Inspector.");
+            Debug.LogError("El componente TextMeshProUGUI no estï¿½ asignado en el Inspector.");
         }
 
         // -------------------------------------------------botones----------------------------------------------------------
@@ -118,30 +118,24 @@ public class ControlJuego : MonoBehaviour
             texto2.text = "avaricia";
             texto3.text = "ambicion";
         }
-        else if (fraseAleatoria.text == "Más vale _ _ _ _ _ _ _ _ que curar")
+        else if (fraseAleatoria.text == "Mï¿½s vale _ _ _ _ _ _ _ _ que curar")
         {
             texto1.text = "anticiparse";
             texto2.text = "prevenir";
             texto3.text = "reemplazar";
         }
-        else if (fraseAleatoria.text == "Primero es la _ _ _ _ _ _ _ _ _ que la devoción")
+        else if (fraseAleatoria.text == "Primero es la _ _ _ _ _ _ _ _ _ que la devociï¿½n")
         {
             texto1.text = "esperanza";
             texto2.text = "exigencia";
             texto3.text = "obligacion";
         }
-        else if (fraseAleatoria.text == "A palabras _ _ _ _ _ _ , oídos sordos")
+        else if (fraseAleatoria.text == "A palabras _ _ _ _ _ _ , oï¿½dos sordos")
         {
             texto1.text = "simples";
             texto2.text = "necias";
             texto3.text = "acefalas";
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void FrasesAleatorias()
@@ -179,99 +173,43 @@ public class ControlJuego : MonoBehaviour
         Debug.Log(respuesta.text);
         if (respuesta.text == "golondrina")
         {
-            aciertos++;
-            actualizarTexto();
-            PlayerPrefs.SetInt("aciertos", aciertos);
-            fraseAleatoria.text = "¡Correcto! La frase es: Una golondrina no hace verano";
-            botonContinuar.gameObject.SetActive(true);
-            boton1.gameObject.SetActive(false);
-            boton2.gameObject.SetActive(false);
-            boton3.gameObject.SetActive(false);
-            Debug.Log("Le has dado al boton");
+            fraseAleatoria.text = "Â¡Correcto! La frase es: Una golondrina no hace verano";
+            RespuestaCorrecta();
         }
         else if (respuesta.text == "hierro")
         {
-            aciertos++;
-            actualizarTexto();
-            PlayerPrefs.SetInt("aciertos", aciertos);
-            fraseAleatoria.text = "¡Correcto! La frase es: El que a hierro mata, a hierro muere";
-            botonContinuar.gameObject.SetActive(true);
-            boton1.gameObject.SetActive(false);
-            boton2.gameObject.SetActive(false);
-            boton3.gameObject.SetActive(false);
-            Debug.Log("Le has dado al boton");
+            fraseAleatoria.text = "Â¡Correcto! La frase es: El que a hierro mata, a hierro muere";
+            RespuestaCorrecta();
         }
         else if (respuesta.text == "clavo")
         {
-            aciertos++;
-            actualizarTexto();
-            PlayerPrefs.SetInt("aciertos", aciertos);
-            fraseAleatoria.text = "¡Correcto! La frase es: Un clavo saca otro clavo";
-            botonContinuar.gameObject.SetActive(true);
-            boton1.gameObject.SetActive(false);
-            boton2.gameObject.SetActive(false);
-            boton3.gameObject.SetActive(false);
-            Debug.Log("Le has dado al boton");
+            fraseAleatoria.text = "Â¡Correcto! La frase es: Un clavo saca otro clavo";
+            RespuestaCorrecta();
         }
         else if (respuesta.text == "enemigo")
         {
-            aciertos++;
-            actualizarTexto();
-            PlayerPrefs.SetInt("aciertos", aciertos);
-            fraseAleatoria.text = "¡Correcto! La frase es: A enemigo que huye, puente de plata";
-            botonContinuar.gameObject.SetActive(true);
-            boton1.gameObject.SetActive(false);
-            boton2.gameObject.SetActive(false);
-            boton3.gameObject.SetActive(false);
-            Debug.Log("Le has dado al boton");
+            fraseAleatoria.text = "Â¡Correcto! La frase es: A enemigo que huye, puente de plata";
+            RespuestaCorrecta();
         }
         else if (respuesta.text == "avaricia")
         {
-            aciertos++; 
-            actualizarTexto();
-            PlayerPrefs.SetInt("aciertos", aciertos);
-            fraseAleatoria.text = "¡Correcto! La frase es: La avaricia rompe el saco";
-            botonContinuar.gameObject.SetActive(true);
-            boton1.gameObject.SetActive(false);
-            boton2.gameObject.SetActive(false);
-            boton3.gameObject.SetActive(false);
-            Debug.Log("Le has dado al boton");
+            fraseAleatoria.text = "Â¡Correcto! La frase es: La avaricia rompe el saco";
+            RespuestaCorrecta();
         }
         else if (respuesta.text == "prevenir")
         {
-            aciertos++;
-            actualizarTexto();
-            PlayerPrefs.SetInt("aciertos", aciertos);
-            fraseAleatoria.text = "¡Correcto! La frase es: Más vale prevenir que curar";
-            botonContinuar.gameObject.SetActive(true);
-            boton1.gameObject.SetActive(false);
-            boton2.gameObject.SetActive(false);
-            boton3.gameObject.SetActive(false);
-            Debug.Log("Le has dado al boton");
+            fraseAleatoria.text = "Â¡Correcto! La frase es: MÃ¡s vale prevenir que curar";
+            RespuestaCorrecta();
         }
         else if (respuesta.text == "obligacion")
         {
-            aciertos++;
-            actualizarTexto();
-            PlayerPrefs.SetInt("aciertos", aciertos);
-            fraseAleatoria.text = "¡Correcto! La frase es: Primero es la obligacion que la devoción";
-            botonContinuar.gameObject.SetActive(true);
-            boton1.gameObject.SetActive(false);
-            boton2.gameObject.SetActive(false);
-            boton3.gameObject.SetActive(false);
-            Debug.Log("Le has dado al boton");
+            fraseAleatoria.text = "Â¡Correcto! La frase es: Primero es la obligacion que la devociÃ³n";
+            RespuestaCorrecta();
         }
         else if (respuesta.text == "necias")
         {
-            aciertos++;
-            actualizarTexto();
-            PlayerPrefs.SetInt("aciertos", aciertos);
-            fraseAleatoria.text = "¡Correcto! La frase es: A palabras necias , oídos sordos";
-            botonContinuar.gameObject.SetActive(true);
-            boton1.gameObject.SetActive(false);
-            boton2.gameObject.SetActive(false);
-            boton3.gameObject.SetActive(false);
-            Debug.Log("Le has dado al boton");
+            fraseAleatoria.text = "Â¡Correcto! La frase es: A palabras necias , oÃ­dos sordos";
+            RespuestaCorrecta();
         }
         else
         {
@@ -283,9 +221,21 @@ public class ControlJuego : MonoBehaviour
             boton2.gameObject.SetActive(false);
             boton3.gameObject.SetActive(false);
             Debug.Log("le has dado al boton incorrecto");
-            // Aquí podrías agregar lógica adicional, como reiniciar el juego.
+            // Aquï¿½ podrï¿½as agregar lï¿½gica adicional, como reiniciar el juego.
         } 
 
+    }
+
+    void RespuestaCorrecta()
+    {
+        aciertos++;
+            actualizarTexto();
+            PlayerPrefs.SetInt("aciertos", aciertos);
+            botonContinuar.gameObject.SetActive(true);
+            boton1.gameObject.SetActive(false);
+            boton2.gameObject.SetActive(false);
+            boton3.gameObject.SetActive(false);
+            Debug.Log("Le has dado al boton");
     }
 
     public void BotonReinicio()
@@ -296,7 +246,6 @@ public class ControlJuego : MonoBehaviour
     public void BotonContinuar()
     {
         SceneManager.LoadScene("Refranes");
-
     }
     public void BotonSalir()
     {
@@ -306,13 +255,15 @@ public class ControlJuego : MonoBehaviour
     public void FinDelJuego()
     {
         PlayerPrefs.SetInt("aciertos", 0);
+        PlayerPrefs.SetInt("Refranes",2);
+        PlayerPrefs.SetInt("Electricidad2", 1);
         fraseFinalDelJuego.gameObject.SetActive(true);
         fraseAleatoria.gameObject.SetActive(false);
         botonSalir.gameObject.SetActive(true);
         boton1.gameObject.SetActive(false);
         boton2.gameObject.SetActive(false);
         boton3.gameObject.SetActive(false);
-        Debug.Log("Le has dado al botón salir nivel");
+        Debug.Log("Le has dado al botï¿½n salir nivel");
     }
 
     public void actualizarTexto()

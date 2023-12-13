@@ -15,6 +15,11 @@ public class DialogueScript : MonoBehaviour
     private int index;
     private bool mensaje;
 
+    void Awake()
+    {
+        Comprobar();
+    }
+
     private void Comprobar()
     {
         if(PlayerPrefs.GetInt("Comienzo")!=0){
@@ -28,15 +33,7 @@ public class DialogueScript : MonoBehaviour
 
     void Start()
     {
-        Invoke("Comprobar",0.001f);
-
-        /*if(PlayerPrefs.GetInt("Comienzo")!=0){
-            gato.gameObject.SetActive(false);
-            puerta.gameObject.SetActive(false);
-        }
-
-        text.text="";
-        dialogue.gameObject.SetActive(false);*/
+        
     }
 
 

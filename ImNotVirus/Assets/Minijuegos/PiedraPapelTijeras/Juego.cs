@@ -10,6 +10,7 @@ public class Juego : MonoBehaviour
 {
     public TextMeshProUGUI textoResultado;
     public TextMeshProUGUI textoTitulo;
+    public TextMeshProUGUI textoPuntos;
     public Button botonPiedraJugador;
     public Button botonPapelJugador;
     public Button botonTijerasJugador;
@@ -20,11 +21,19 @@ public class Juego : MonoBehaviour
     public RawImage tijerasOponente;
 
     private bool juegoActivo;
+    private byte puntos;
     
     // Start is called before the first frame update
     void Start()
     {
+        // PlayerPrefs.SetInt("puntos",0);
         juegoActivo = true; // para que el jugador no le de varias veces al boton.
+        puntos = (byte) PlayerPrefs.GetInt("puntos");
+
+        if (puntos >= 3)
+        {
+            Victoria();
+        }
     }
 
     // Update is called once per frame
@@ -106,35 +115,49 @@ public class Juego : MonoBehaviour
             {
                 case 0:
                     textoResultado.SetText("¡Has Perdido!");
-                    botonReiniciar.gameObject.SetActive(true);
                     break;
                 case 1:
+                    puntos++;
+                    PlayerPrefs.SetInt("puntos", puntos);
                     textoResultado.SetText("¡Has Ganado!");
-                    botonSalir.gameObject.SetActive(true);
                     break;
                 case 2:
                     textoResultado.SetText("¡Habéis empatado!");
-                    botonReiniciar.gameObject.SetActive(true);
                     break;
             }
 
             MostrarImagenes((byte)eleccion, eleccionOponente);
+            textoPuntos.text = "Puntos: " + puntos;
+            botonReiniciar.gameObject.SetActive(true);
             textoTitulo.gameObject.SetActive(false);
             textoResultado.gameObject.SetActive(true);
-            
+            textoPuntos.gameObject.SetActive(true);
+
             juegoActivo = false;
         } // if
     } // method
 
     public void SalirJuego()
     {
-        // Aqui se mete lo que haga falta para cambiar de escena.
+        PlayerPrefs.SetInt("puntos", 0);
         SceneManager.LoadScene("Nivel1");
     }
 
     public void ReiniciarJuego()
     {
         SceneManager.LoadScene("PiedraPapelTijeras");
+    }
+
+    public void Victoria()
+    {
+        PlayerPrefs.SetInt("puntos", 0);
+        botonPiedraJugador.gameObject.SetActive(false);
+        botonPapelJugador.gameObject.SetActive(false);
+        botonTijerasJugador.gameObject.SetActive(false);
+        textoResultado.text = "Has conseguido 3 puntos, ¡Enhorabuena!";
+        textoResultado.gameObject.SetActive(true);
+        botonSalir.gameObject.SetActive(true);
+        
     }
 
 }
